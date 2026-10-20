@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block titulo %}Meus contatos{% endblock %}
+{% block conteudo %}
+<section class="painel">
+    <div class="titulo-pagina">
+        <div>
+            <h2>{% if grupo %}Grupo: {{ grupo }}{% else %}Meus contatos{% endif %}</h2>
+            <p>Consulte e organize seus contatos cadastrados.</p>
+        </div>
+        <a class="botao" href="{{ url_for('contacts.cadastrar') }}">+ Novo contato</a>
+    </div>
+
+    {% if grupo %}
+        <p><a href="{{ url_for('contacts.index') }}">Ver todos os contatos</a></p>
+    {% endif %}
+
+    {% if contatos %}
+        <div class="lista-contatos">
+            {% for contato in contatos %}
+                <article class="contato">
+                    <div class="avatar">{{ contato.name[0]|upper }}</div>
+                    <div class="dados-contato">
+                        <h3>{{ contato.name }}</h3>
+                        <p>Telefone: {{ contato.phone }}</p>
+                        <p>E-mail: {{ contato.email }}</p>
+                        <a class="grupo" href="{{ url_for('contacts.index', grupo=contato.group) }}">{{ contato.group }}</a>
+                    </div>
+                    <div class="acoes">
+                        <a class="botao secundario" href="{{ url_for('contacts.editar', contact_id=contato.id) }}">Editar</a>
+                        <form action="{{ url_for('contacts.remover', contact_id=contato.id) }}" method="POST"
+                              onsubmit="return confirm('Deseja remover este contato?');">
+                            <button class="botao perigo" type="submit">Remover</button>
+                        </form>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="vazio">
+            <h3>Nenhum contato encontrado</h3>
+            <p>{% if grupo %}Não há contatos neste grupo.{% else %}Cadastre um contato para começar sua agenda.{% endif %}</p>
+            <a class="botao" href="{{ url_for('contacts.cadastrar') }}">Cadastrar contato</a>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}

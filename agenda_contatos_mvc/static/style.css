@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.cabecalho {
+    background: #172554;
+    color: white;
+    padding: 22px 0;
+}
+
+.container {
+    width: 1100px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cabecalho h1 {
+    margin: 0 0 15px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main.container {
+    min-height: 600px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.painel, .formulario-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px #0f172a0d;
+}
+
+.titulo-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.titulo-pagina p, .formulario-card > p {
+    color: #64748b;
+}
+
+.lista-contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: white;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dados-contato {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.dados-contato h3 {
+    margin: 0 0 8px;
+}
+
+.dados-contato p {
+    margin: 5px 0;
+    color: #64748b;
+}
+
+.grupo {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 10px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.acoes form {
+    margin: 0;
+}
+
+.botao {
+    display: inline-block;
+    padding: 11px 15px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background: #1d4ed8;
+}
+
+.botao.secundario {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+.botao.secundario:hover {
+    background: #cbd5e1;
+}
+
+.botao.perigo {
+    background: #dc2626;
+}
+
+.botao.perigo:hover {
+    background: #b91c1c;
+}
+
+.formulario-card {
+    width: 550px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.formulario-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: white;
+    font-size: 15px;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+.formulario-card button {
+    margin-top: 10px;
+}
+
+.link-voltar {
+    display: inline-block;
+    margin-top: 8px;
+    text-align: center;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.vazio {
+    padding: 35px 10px;
+    text-align: center;
+}
+
+.vazio p {
+    margin-bottom: 25px;
+    color: #64748b;
+}
+
+.mensagem {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.sucesso {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.erro {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.resultado {
+    margin-top: 20px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: #64748b;
+}
+
+@media (max-width: 600px) {
+    .contato {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .dados-contato {
+        width: 250px;
+        max-width: 100%;
+    }
+
+    .acoes {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .titulo-pagina .botao {
+        width: 250px;
+        max-width: 100%;
+    }
+}
